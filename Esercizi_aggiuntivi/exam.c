@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <upo/bst.h>
+#include <upo/hashtable.h>
 
 void prova()
 {
