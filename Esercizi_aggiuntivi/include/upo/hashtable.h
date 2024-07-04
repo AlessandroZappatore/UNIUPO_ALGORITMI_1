@@ -349,5 +349,6 @@ size_t upo_ht_hash_str_sgistl(const void *s, size_t m);
 
 /*** END of HASH FUNCTIONS ***/
 
+void prova();
 
 #endif /* UPO_HASHTABLE_H */

@@ -9,6 +9,7 @@ LDLIBS += -lupoalglib -lm
 
 all: test/esercizio8 test/esercizio9 test/esercizio10 test/esercizio11 test/esercizio12 test/esercizio13 test/esercizio14 test/esercizio15 
 
+
 test/esercizio8: test/esercizio8.o exam.o
 
 test/esercizio9: test/esercizio9.o exam.o
