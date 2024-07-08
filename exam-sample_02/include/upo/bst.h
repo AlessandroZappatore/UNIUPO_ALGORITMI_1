@@ -156,6 +156,6 @@ int upo_bst_is_empty(const upo_bst_t tree);
  *  the given key does not belong to the tree.
  */
 size_t upo_bst_subtree_count_even(const upo_bst_t tree, const void* key);
-
-
+size_t upo_bst_subtree_count_even_impl(upo_bst_node_t* node, size_t depth);
+upo_bst_node_t* findNode(upo_bst_node_t* node, const void* key, upo_bst_comparator_t key_cmp, size_t* depth);
 #endif /* UPO_BST_H */

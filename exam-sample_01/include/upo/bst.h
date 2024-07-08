@@ -154,6 +154,6 @@ int upo_bst_is_empty(const upo_bst_t tree);
  * Worst-case complexity: linear in the the number `n` of elements.
  */
 const void* upo_bst_predecessor(const upo_bst_t tree, const void *key);
-
+void* upo_bst_predecessor_impl(upo_bst_node_t* node, const void* key, upo_bst_comparator_t key_cmp);
 
 #endif /* UPO_BST_H */

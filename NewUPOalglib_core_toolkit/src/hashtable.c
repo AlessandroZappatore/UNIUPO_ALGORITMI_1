@@ -566,8 +566,7 @@ upo_ht_key_list_t upo_ht_sepchain_keys(const upo_ht_sepchain_t ht)
     upo_ht_key_list_t list = NULL;
     if (!upo_ht_sepchain_is_empty(ht))
     {
-        size_t i = 0;
-        for (i = 0; i < ht->capacity; ++i)
+        for (size_t i = 0; i < ht->capacity; ++i)
         {
             upo_ht_sepchain_list_node_t *node = NULL;
             for (node = ht->slots[i].head; node != NULL; node = node->next)
@@ -593,7 +592,7 @@ void upo_ht_sepchain_traverse(const upo_ht_sepchain_t ht, upo_ht_visitor_t visit
     if(!upo_ht_sepchain_is_empty(ht))
     {
         upo_ht_sepchain_list_node_t *node=ht->slots->head;
-        for(size_t i=0; node!=NULL; i++)
+        while(node!=NULL)
         {   
             visit(node->key, node->value, visit_context);
             node=node->next;
