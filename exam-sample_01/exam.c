@@ -15,31 +15,28 @@
 #include <upo/sort.h>
 
 /**** BEGIN of EXERCISE #1 ****/
-
 const void *upo_bst_predecessor(const upo_bst_t bst, const void *key)
 {
-    if (bst != NULL)
-    {
-        return upo_bst_predecessor_impl(bst->root, key, bst->key_cmp);
-    }
-    return NULL;
+    if (bst == NULL || key == NULL) return NULL;
+
+    return upo_bst_predecessor_impl(bst->root, key, bst->key_cmp);
+    
 }
 
 void *upo_bst_predecessor_impl(upo_bst_node_t *node, const void *key, upo_bst_comparator_t key_cmp)
 {
-    if (node != NULL)
-    {
-        if (key_cmp(node->key, key) >= 0)
-            return upo_bst_predecessor_impl(node->left, key, key_cmp);
+    if (node == NULL) return NULL;
+    
+    if (key_cmp(node->key, key) >= 0)
+        return upo_bst_predecessor_impl(node->left, key, key_cmp);
 
-        void *pred = upo_bst_predecessor_impl(node->right, key, key_cmp);
-        if (pred == NULL)
-            return node->key;
-        else
-            return pred;
-    }
-    return NULL;
+    void *pred = upo_bst_predecessor_impl(node->right, key, key_cmp);
+    if (pred == NULL)
+        return node->key;
+    else
+        return pred;
 }
+
 /**** END of EXERCISE #1 ****/
 
 /**** BEGIN of EXERCISE #2 ****/
