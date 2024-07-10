@@ -37,7 +37,7 @@ int upo_ht_linprob_max_collisions(const upo_ht_linprob_t ht, const upo_ht_key_li
           max_collision = collision + 1;
         break;
       }
-      else if(ht->slots[tmp_hash].tombstone && ht->slots[tmp_hash].key != NULL)
+      else if(ht->slots[tmp_hash].tombstone || ht->slots[tmp_hash].key != NULL)
         collision++;\
       else
         break;
@@ -73,7 +73,7 @@ double upo_ht_linprob_avg_collisions(const upo_ht_linprob_t ht, const upo_ht_key
         num_keys++;
         found = 1;
       }
-      else if(ht->slots[tmp_hash].tombstone && ht->slots[tmp_hash].keys != NULL)
+      else if(ht->slots[tmp_hash].tombstone || ht->slots[tmp_hash].keys != NULL)
         collisions++;
     }
     current = current->next;
